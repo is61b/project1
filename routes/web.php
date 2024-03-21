@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/tes-git', function () {
+    return "Halo, ini cuma coba pakai git";
+});
