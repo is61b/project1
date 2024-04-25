@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/tes-git', function () {
     return "Halo, ini cuma coba pakai git";
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
