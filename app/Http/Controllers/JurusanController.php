@@ -51,7 +51,8 @@ class JurusanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $jur = Jurusan::find($id);
+        return view('jurusan.edit',compact('jur'));
     }
 
     /**
