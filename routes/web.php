@@ -28,3 +28,4 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::get('/jurusan/', [JurusanController::class, 'index']);
 Route::get('/jurusan/form/', [JurusanController::class, 'create']);
+Route::post('/jurusan/store/', [JurusanController::class, 'store']);
