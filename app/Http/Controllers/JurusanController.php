@@ -60,7 +60,12 @@ class JurusanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $jur = Jurusan::find($id);
+        $jur->kode = $request->kode;
+        $jur->jurusan = $request->jurusan;
+        $jur->save();
+
+        return redirect('/jurusan/');
     }
 
     /**
