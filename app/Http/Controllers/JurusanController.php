@@ -12,7 +12,9 @@ class JurusanController extends Controller
      */
     public function index()
     {
-        return view('jurusan.index');
+        $nomor = 1;
+        $jur = Jurusan::all(); //eloquent ORM
+        return view('jurusan.index',compact('nomor','jur'));
     }
 
     /**
