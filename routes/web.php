@@ -27,3 +27,4 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/jurusan/', [JurusanController::class, 'index']);
+Route::get('/jurusan/form/', [JurusanController::class, 'create']);

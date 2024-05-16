@@ -15,7 +15,7 @@
     <div class="card">
         <div class="card-header">
         <h3 class="card-title">
-            <a href="#" class="btn btn-primary"><i class="fa fa-folder-plus"></i> Tambah Data</a>
+            <a href="/jurusan/form/" class="btn btn-primary"><i class="fa fa-folder-plus"></i> Tambah Data</a>
         </h3>
 
         <div class="card-tools">
