@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,9 @@ Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit']);
 Route::put('/jurusan/{id}', [JurusanController::class, 'update']);
 Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy']);
 
+Route::get('/mahasiswa/', [MahasiswaController::class, 'index']);
+Route::get('/mahasiswa/form/', [MahasiswaController::class, 'create']);
+Route::post('/mahasiswa/store/', [MahasiswaController::class, 'store']);
+Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'edit']);
+Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
+Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy']);
