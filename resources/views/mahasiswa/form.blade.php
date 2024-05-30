@@ -28,7 +28,7 @@
         </div>
         </div>
         <div class="card-body">
-            <form method="POST" action="/jurusan/store/">
+            <form method="POST" action="/mahasiswa/store/">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">NIM</label>
@@ -64,12 +64,26 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Agama</label>
-                    <input type="text" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <select name="agama" class="form-control" id="">
+                        <option value="">-Pilih Agama-</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Jurusan</label>
-                    <input type="text" name="jurusan" class="form-control" id="exampleInputPassword1">
+                    <select name="jurusan" class="form-control" id="">
+                        <option value="">-Pilih Jurusan-</option>
+                        @foreach ($jur as $item)
+                            <option value="{{$item->id}}">{{$item->kode}} - {{$item->jurusan}}</option>
+                        @endforeach
+
+                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
