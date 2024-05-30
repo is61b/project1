@@ -44,7 +44,7 @@
                         <td>{{$nomor++}}</td>
                         <td>{{$item->nim}}</td>
                         <td>{{$item->nama}}</td>
-                        <td>{{$item->jurusans_id}}</td>
+                        <td>{{$item->jurusans->jurusan}}</td>
                         <td>
                             <a href="/mahasiswa/edit/{{$item->id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
 
