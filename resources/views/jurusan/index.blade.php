@@ -43,6 +43,7 @@
                         <td>{{$nomor++}}</td>
                         <td>{{$item->kode}}</td>
                         <td>{{$item->jurusan}}</td>
+                        @if (Auth::user()->hak_akses == "admin" )
                         <td>
                             <a href="/jurusan/edit/{{$item->id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
 
@@ -73,6 +74,9 @@
                                 </div>
                             </div>
                         </td>
+                        @else
+                        <td>anda tidak diperbolehkan mengakses ini</td>
+                        @endif
                     </tr>
                     @empty
 

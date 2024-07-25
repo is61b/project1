@@ -194,14 +194,17 @@
                         </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/mahasiswa/" class="nav-link">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                Mahasiswa
-                            </p>
-                        </a>
-                    </li>
+                    @if (Auth::user()->hak_akses == "admin" )
+                        <li class="nav-item">
+                            <a href="/mahasiswa/" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Mahasiswa
+                                </p>
+                            </a>
+                        </li>
+                    @endif
+
                     <li class="nav-item">
                         <a href="/jurusan/" class="nav-link">
                             <i class="nav-icon fas fa-building"></i>

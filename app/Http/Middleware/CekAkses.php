@@ -15,7 +15,7 @@ class CekAkses
      */
     public function handle(Request $request, Closure $next, ...$akses): Response
     {
-        if(in_array(Auth::user()->hak_akses == $akses)){
+        if(in_array($request->user()->hak_akses, $akses)){
             return $next($request);
         }
         return redirect('/');

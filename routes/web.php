@@ -31,16 +31,21 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/jurusan/', [JurusanController::class, 'index']);
     Route::get('/jurusan/form/', [JurusanController::class, 'create']);
     Route::post('/jurusan/store/', [JurusanController::class, 'store']);
-    Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit']);
-    Route::put('/jurusan/{id}', [JurusanController::class, 'update']);
-    Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy']);
 
-    Route::get('/mahasiswa/', [MahasiswaController::class, 'index']);
-    Route::get('/mahasiswa/form/', [MahasiswaController::class, 'create']);
-    Route::post('/mahasiswa/store/', [MahasiswaController::class, 'store']);
-    Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'edit']);
-    Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
-    Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy']);
+
+    Route::middleware(['auth', 'CekAkses:admin'])->group(function () {
+        Route::get('/mahasiswa/', [MahasiswaController::class, 'index']);
+        Route::get('/mahasiswa/form/', [MahasiswaController::class, 'create']);
+        Route::post('/mahasiswa/store/', [MahasiswaController::class, 'store']);
+        Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'edit']);
+        Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
+        Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy']);
+
+        Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit']);
+        Route::put('/jurusan/{id}', [JurusanController::class, 'update']);
+        Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy']);
+    });
+
 });
 
 
