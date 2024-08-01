@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MhsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/login-mhs', [MhsController::class, 'login']);
+Route::post('/login-mhs', [MhsController::class, 'ceklogin'])->name('login-mhs');
 Route::middleware('auth:mahasiswa')->group(function () {
 
 });
