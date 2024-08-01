@@ -30,8 +30,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::get('/login-mhs', [MhsController::class, 'login']);
 Route::post('/login-mhs', [MhsController::class, 'ceklogin'])->name('login-mhs');
-Route::middleware('auth:mahasiswa')->group(function () {
 
+Route::middleware('auth:mahasiswa')->group(function () {
+    Route::get('/db-mhs', [MhsController::class, 'index']);
 });
 
 Route::middleware(['auth'])->group(function () {
