@@ -39,6 +39,7 @@ class MahasiswaController extends Controller
         $mhs->tanggalLahir = $request->tanggal;
         $mhs->jenisKelamin = $request->jk;
         $mhs->agama = $request->agama;
+        $mhs->password = bcrypt($request->password);
         $mhs->jurusans_id = $request->jurusan;
         $mhs->save();
 
