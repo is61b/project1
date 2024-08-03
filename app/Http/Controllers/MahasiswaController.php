@@ -41,7 +41,10 @@ class MahasiswaController extends Controller
         $mhs->agama = $request->agama;
         $mhs->password = bcrypt($request->password);
         $mhs->jurusans_id = $request->jurusan;
+        $mhs->foto = $request->foto->getClientOriginalName();
         $mhs->save();
+
+        $request->foto->move('foto',$request->foto->getClientOriginalName());
 
         return redirect('/mahasiswa/');
     }

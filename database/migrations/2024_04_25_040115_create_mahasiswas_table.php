@@ -19,6 +19,8 @@ return new class extends Migration
             $table->date('tanggalLahir');
             $table->string('jenisKelamin',20);
             $table->string('agama',20);
+            $table->string('password');
+            $table->string('foto');
             $table->bigInteger('jurusans_id');
             $table->timestamps();
         });

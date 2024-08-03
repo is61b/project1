@@ -28,7 +28,7 @@
         </div>
         </div>
         <div class="card-body">
-            <form method="POST" action="/mahasiswa/store/">
+            <form method="POST" action="/mahasiswa/store/" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">NIM</label>
@@ -88,6 +88,11 @@
                         @endforeach
 
                     </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Foto</label>
+                    <input type="file" accept="image/*" name="foto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
