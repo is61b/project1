@@ -32,6 +32,15 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nim' => 'required|unique:mahasiswas,nim',
+            'nama' => 'required',
+            'foto' => 'required|image|max:10000',
+        ],[
+            'required' => ':attribute Tidak Boleh Kosong',
+            'unique' => ':attribute Sudah Digunakan',
+        ]);
+
         $mhs = new Mahasiswa;
         $mhs->nim = $request->nim;
         $mhs->nama = $request->nama;
